@@ -4,18 +4,16 @@
  * @return {number[]}
  */
 var twoSum = function(nums, target) {
-   const count=new Map()
+   const x=new Map();
 
-   nums.forEach((n,i)=>{
-    count.set(n,i)
-   })
+   nums.forEach((n,i)=>x.set(n,i))
 
    for(let i=0;i<nums.length;i++)
    {
-    let secondValue=target-nums[i]
-    if(count.has(secondValue) && count.get(secondValue)!==i)
+    const a=target-nums[i];
+    if(x.has(a) && x.get(a)!==i)
     {
-        return [i,count.get(secondValue)]
+        return [i,x.get(a)]
     }
    }
 
